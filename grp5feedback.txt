@@ -1,0 +1,39 @@
+Group 5 Feedback
+
+Great job overall, very little to complain about.
+
+1. Tests could be a bit more robust, in addition to testing the change functionality,
+also consider testing that your classes are being instantiated correctly.
+
+- Instantiate a Gum 
+- Assert that your getters retrieve values that you would expect based on what you 
+passed into the constructor.
+
+2. Love the idea of a custom Log class. Here is an area for improvement:
+
+This is probably excessive:
+------------------------------------------------------
+static File newFile = new File("..//java", "Log.txt");
+------------------------------------------------------
+
+Just do this:
+------------------------------------------------------
+static File newFile = new File("Log.txt");
+------------------------------------------------------
+
+Also, your log file is hard to read as there are no line breaks. The following fix
+should improve things: 
+
+writer.append(message + "\n");
+
+3. On the Inventory class if you find yourself doing this:
+------------------------------------------------------
+int count = 0;
+for (Product item : productList) {
+	inventArray[count] = item.toString();
+
+	count++;
+
+}
+------------------------------------------------------
+Consider using just a regular for loop instead.
